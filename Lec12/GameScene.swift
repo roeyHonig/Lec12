@@ -20,6 +20,14 @@ class GameScene: SKScene {
         addBackground("lights")
         addBackground("midt")
         addBall()
+        addCircle()
+        
+        // add phisics:
+        // caged ball
+        cageTheBall()
+        
+       
+        
         /*Setup the game scene here*/
         
         // in games there are nodes, node are everything, like charcters or anything
@@ -92,14 +100,37 @@ class GameScene: SKScene {
     
     func addBall() {
         b = SKSpriteNode(imageNamed: "ball.png")
-        b.size.width = 30
-        b.size.height = 30
-        b.position = CGPoint(x: frame.midX, y: frame.midY)
-        addChild(b)
+        let ballBody = SKPhysicsBody(circleOfRadius: b.size.width / 2)
+        ballBody.friction = 0
+        ballBody.allowsRotation = true // can spin?
+        ballBody.restitution = 1
+        ballBody.linearDamping = 0
+        ballBody.angularDamping = 0
         
+        b.position = CGPoint(x: frame.midX, y: frame.midY)
+        
+        
+        b.physicsBody = ballBody
+        addChild(b)
         
     }
     
+    func addCircle() {
+        let circle = SKSpriteNode(imageNamed: "circle.png")
+        circle.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
+        circle.physicsBody = SKPhysicsBody(circleOfRadius: circle.size.width / 2) // it will make him fall
+        addChild(circle)
+        
+    }
+    
+    func cageTheBall()  {
+        let fence = SKPhysicsBody(edgeLoopFrom: frame)
+        fence.friction = 0
+        fence.restitution = 1 // full elastic impact momentum conservation
+        fence.isDynamic = false // we don't want the world to be influenced by any thing, fully static - defult is false
+        self.physicsBody = fence
+    
+    }
     
 }
 

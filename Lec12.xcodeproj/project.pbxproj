@@ -19,6 +19,8 @@
 		6DFD9DA220BFEA6300D8AA16 /* frontT.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9D9E20BFEA6300D8AA16 /* frontT.png */; };
 		6DFD9DA320BFEA6300D8AA16 /* backT.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9D9F20BFEA6300D8AA16 /* backT.png */; };
 		6DFD9DA520BFEB6500D8AA16 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9DA420BFEB6500D8AA16 /* ball.png */; };
+		6DFD9DA720BFF39C00D8AA16 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9DA620BFF39C00D8AA16 /* circle.png */; };
+		6DFD9DA920BFF3AB00D8AA16 /* squar.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9DA820BFF3AB00D8AA16 /* squar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		6DFD9D9E20BFEA6300D8AA16 /* frontT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontT.png; sourceTree = "<group>"; };
 		6DFD9D9F20BFEA6300D8AA16 /* backT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backT.png; sourceTree = "<group>"; };
 		6DFD9DA420BFEB6500D8AA16 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		6DFD9DA620BFF39C00D8AA16 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		6DFD9DA820BFF3AB00D8AA16 /* squar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = squar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 		6D2FE00B20BFCCC800D4E3E6 /* Lec12 */ = {
 			isa = PBXGroup;
 			children = (
+				6DFD9DA820BFF3AB00D8AA16 /* squar.png */,
+				6DFD9DA620BFF39C00D8AA16 /* circle.png */,
 				6DFD9DA420BFEB6500D8AA16 /* ball.png */,
 				6DFD9D9F20BFEA6300D8AA16 /* backT.png */,
 				6DFD9D9E20BFEA6300D8AA16 /* frontT.png */,
@@ -149,8 +155,10 @@
 				6DFD9DA520BFEB6500D8AA16 /* ball.png in Resources */,
 				6D2FE01820BFCCC800D4E3E6 /* Main.storyboard in Resources */,
 				6DFD9D9B20BFE91000D8AA16 /* back.psd in Resources */,
+				6DFD9DA920BFF3AB00D8AA16 /* squar.png in Resources */,
 				6DFD9DA320BFEA6300D8AA16 /* backT.png in Resources */,
 				6DFD9DA220BFEA6300D8AA16 /* frontT.png in Resources */,
+				6DFD9DA720BFF39C00D8AA16 /* circle.png in Resources */,
 				6D2FE01A20BFCCC800D4E3E6 /* Assets.xcassets in Resources */,
 				6D2FE01D20BFCCC800D4E3E6 /* LaunchScreen.storyboard in Resources */,
 			);
