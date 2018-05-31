@@ -31,6 +31,7 @@ class GameViewController: UIViewController {
         // don't leave it on for the APP Store!!!!!!!!!
         // for debug pupos only !!!!!!!!!!!!!!!!!!!!!!!!!!!
         v.showsFPS = true
+        v.showsNodeCount = true
         
         // change the background color
         scene.backgroundColor = UIColor.orange

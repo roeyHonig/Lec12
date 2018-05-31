@@ -22,7 +22,10 @@ class GameScene: SKScene {
         addBall()
         addCircle()
         
-        // add phisics:
+        
+        
+        playWithAction()
+        
         // caged ball
         cageTheBall()
         
@@ -78,6 +81,7 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        /*
         // each time the next frame is presented
         // this is basically the time counter
         if b != nil {
@@ -87,7 +91,7 @@ class GameScene: SKScene {
             }
             
         }
-        
+        */
     }
     
     func addBackground(_ fileName: String) {
@@ -107,12 +111,16 @@ class GameScene: SKScene {
         ballBody.linearDamping = 0
         ballBody.angularDamping = 0
         
+        
+        
         b.position = CGPoint(x: frame.midX, y: frame.midY)
         
         
         b.physicsBody = ballBody
         addChild(b)
         
+        // hit the ball
+        ballBody.applyImpulse(CGVector(dx: 20, dy: 20))
     }
     
     func addCircle() {
@@ -125,11 +133,46 @@ class GameScene: SKScene {
     
     func cageTheBall()  {
         let fence = SKPhysicsBody(edgeLoopFrom: frame)
+        
         fence.friction = 0
         fence.restitution = 1 // full elastic impact momentum conservation
         fence.isDynamic = false // we don't want the world to be influenced by any thing, fully static - defult is false
+        physicsWorld.gravity = CGVector.zero
+        
         self.physicsBody = fence
     
+    }
+    
+    func playWithAction() {
+        // actions are basically animations
+        
+        let r = arc4random_uniform(UInt32(frame.width))
+        let t = SKSpriteNode (imageNamed: "pig")
+        t.position = CGPoint(x: CGFloat(r), y: frame.midY)
+        
+        let rotate = SKAction.rotate(byAngle: .pi/4, duration: 10)
+    
+        addChild(t)
+        
+        
+        /* ugly nesting
+        t.run(rotate) {
+            // do this after complition
+            t.run(SKAction.fadeOut(withDuration: 2)) {
+                // after fade out , kill the pig - not just make it invisiable
+                t.run(SKAction.removeFromParent())
+            }
+        }
+        */
+        
+        // beutifull sequence
+        let rot = SKAction.rotate(byAngle: .pi/4, duration: 10)
+        let fadeOut = SKAction.fadeOut(withDuration: 2)
+        let byeBye = SKAction.removeFromParent()
+        let sequence = SKAction.sequence([rot, fadeOut, byeBye])
+        t.run(sequence)
+        
+        
     }
     
 }
