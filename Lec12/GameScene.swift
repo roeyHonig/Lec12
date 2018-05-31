@@ -11,6 +11,10 @@ import SpriteKit
 class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
+        addBackground("backT")
+        addBackground("frontT")
+        addBackground("lights")
+        addBackground("midt")
         /*Setup the game scene here*/
         
         // in games there are nodes, node are everything, like charcters or anything
@@ -25,6 +29,9 @@ class GameScene: SKScene {
         
         // 4). add the node
         addChild(label) //
+        
+        
+        
     }
     
     fileprivate func positionLabel(_ location: CGPoint, _ label: SKLabelNode) {
@@ -59,6 +66,14 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // each time the next frame is presented
+    }
+    
+    func addBackground(_ fileName: String) {
+        let b = SKSpriteNode(imageNamed: fileName)
+        b.size.width = self.size.width
+        b.size.height = self.size.height
+        b.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(b)
     }
     
     

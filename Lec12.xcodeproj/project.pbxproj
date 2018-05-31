@@ -13,6 +13,12 @@
 		6D2FE01A20BFCCC800D4E3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FE01920BFCCC800D4E3E6 /* Assets.xcassets */; };
 		6D2FE01D20BFCCC800D4E3E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FE01B20BFCCC800D4E3E6 /* LaunchScreen.storyboard */; };
 		6DFD9D9920BFD41800D8AA16 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFD9D9820BFD41800D8AA16 /* GameScene.swift */; };
+		6DFD9D9B20BFE91000D8AA16 /* back.psd in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9D9A20BFE91000D8AA16 /* back.psd */; };
+		6DFD9DA020BFEA6300D8AA16 /* lights.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9D9C20BFEA6200D8AA16 /* lights.png */; };
+		6DFD9DA120BFEA6300D8AA16 /* midt.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9D9D20BFEA6300D8AA16 /* midt.png */; };
+		6DFD9DA220BFEA6300D8AA16 /* frontT.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9D9E20BFEA6300D8AA16 /* frontT.png */; };
+		6DFD9DA320BFEA6300D8AA16 /* backT.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9D9F20BFEA6300D8AA16 /* backT.png */; };
+		6DFD9DA520BFEB6500D8AA16 /* icons8-pokeball_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9DA420BFEB6500D8AA16 /* icons8-pokeball_2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		6D2FE01C20BFCCC800D4E3E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D2FE01E20BFCCC800D4E3E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DFD9D9820BFD41800D8AA16 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		6DFD9D9A20BFE91000D8AA16 /* back.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = back.psd; sourceTree = "<group>"; };
+		6DFD9D9C20BFEA6200D8AA16 /* lights.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lights.png; sourceTree = "<group>"; };
+		6DFD9D9D20BFEA6300D8AA16 /* midt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = midt.png; sourceTree = "<group>"; };
+		6DFD9D9E20BFEA6300D8AA16 /* frontT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontT.png; sourceTree = "<group>"; };
+		6DFD9D9F20BFEA6300D8AA16 /* backT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backT.png; sourceTree = "<group>"; };
+		6DFD9DA420BFEB6500D8AA16 /* icons8-pokeball_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-pokeball_2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,12 @@
 		6D2FE00B20BFCCC800D4E3E6 /* Lec12 */ = {
 			isa = PBXGroup;
 			children = (
+				6DFD9DA420BFEB6500D8AA16 /* icons8-pokeball_2.png */,
+				6DFD9D9F20BFEA6300D8AA16 /* backT.png */,
+				6DFD9D9E20BFEA6300D8AA16 /* frontT.png */,
+				6DFD9D9C20BFEA6200D8AA16 /* lights.png */,
+				6DFD9D9D20BFEA6300D8AA16 /* midt.png */,
+				6DFD9D9A20BFE91000D8AA16 /* back.psd */,
 				6D2FE00C20BFCCC800D4E3E6 /* AppDelegate.swift */,
 				6D2FE01420BFCCC800D4E3E6 /* GameViewController.swift */,
 				6D2FE01620BFCCC800D4E3E6 /* Main.storyboard */,
@@ -126,7 +144,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DFD9DA120BFEA6300D8AA16 /* midt.png in Resources */,
+				6DFD9DA020BFEA6300D8AA16 /* lights.png in Resources */,
+				6DFD9DA520BFEB6500D8AA16 /* icons8-pokeball_2.png in Resources */,
 				6D2FE01820BFCCC800D4E3E6 /* Main.storyboard in Resources */,
+				6DFD9D9B20BFE91000D8AA16 /* back.psd in Resources */,
+				6DFD9DA320BFEA6300D8AA16 /* backT.png in Resources */,
+				6DFD9DA220BFEA6300D8AA16 /* frontT.png in Resources */,
 				6D2FE01A20BFCCC800D4E3E6 /* Assets.xcassets in Resources */,
 				6D2FE01D20BFCCC800D4E3E6 /* LaunchScreen.storyboard in Resources */,
 			);
