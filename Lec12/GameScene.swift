@@ -9,14 +9,16 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    // 1). init sk Label node
+    let label = SKLabelNode(fontNamed: "Chalkduster")
+    
     
     override func didMove(to view: SKView) {
         /*Setup the game scene here*/
         
         // in games there are nodes, node are everything, like charcters or anything
         
-        // 1). init sk Label node
-        let label = SKLabelNode(fontNamed: "Chalkduster")
+        
         // 2). set text and other properties
         label.text = "Hello, World!"
         label.fontSize = 40
@@ -27,8 +29,8 @@ class GameScene: SKScene {
         addChild(label) //
     }
     
-    fileprivate func positionLabel(_ location: CGPoint, _ label: SKLabelNode) {
-        // location is of type CGPoint
+    fileprivate func rePositionLabel(_ location: CGPoint, _ label: SKLabelNode) {
+        label.removeFromParent()        // location is of type CGPoint
         
         // 1). init sk Label node
         
@@ -38,6 +40,7 @@ class GameScene: SKScene {
         // 3). position the node
         label.position = CGPoint(x: location.x, y: location.y)
         
+        
         // 4). add the node
         addChild(label)
     }
@@ -46,9 +49,9 @@ class GameScene: SKScene {
         // when the user touches the view
         // call a method to add the label
         for touch in touches {
-            let label = SKLabelNode(fontNamed: "Chalkduster")
+            
             let location = touch.location(in: self)
-            positionLabel(location, label) //
+            rePositionLabel(location, label) //
             
         }
         
