@@ -26,10 +26,12 @@ class GameScene: SKScene {
         
         playWithAction()
         
+        
         // caged ball
         cageTheBall()
         
-       
+       addNinjas()
+        addPaddle()
         
         /*Setup the game scene here*/
         
@@ -65,19 +67,35 @@ class GameScene: SKScene {
         addChild(label)
     }
     
+    var isFingerOnPaddele = false {
+        // property observer !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        didSet{
+            print(isFingerOnPaddele)
+        }
+    }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // when the user touches the view
-        // call a method to add the label
-        for touch in touches {
-            let label = SKLabelNode(fontNamed: "Chalkduster")
-            let location = touch.location(in: self)
-            positionLabel(location, label) //
+        let p = touches.first!.location(in: self)
+        let paddle = childNode(withName: "paddle")!
+        
+        isFingerOnPaddele = paddle.frame.contains(p)
+       
+        //
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let p = touches.first!.location(in: self)
+        let paddle = childNode(withName: "paddle")!
+        
+        if isFingerOnPaddele {
+            paddle.position.x = p.x
             
         }
         
         
-       
-        //
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -92,14 +110,30 @@ class GameScene: SKScene {
             
         }
         */
+        
+        
+        
+        
     }
     
     func addBackground(_ fileName: String) {
-        let back = SKSpriteNode(imageNamed: fileName)
-        back.size.width = self.size.width
-        back.size.height = self.size.height
-        back.position = CGPoint(x: frame.midX, y: frame.midY)
-        addChild(back)
+        let back1 = SKSpriteNode(imageNamed: fileName)
+        back1.size.width = self.size.width
+        back1.size.height = self.size.height
+        back1.position = CGPoint(x: frame.midX, y: frame.midY)
+        
+        let back2 = SKSpriteNode(imageNamed: fileName)
+        back2.size.width = self.size.width
+        back2.size.height = self.size.height
+        back2.position = CGPoint(x: frame.midX + size.width, y: frame.midY)
+        
+        addChild(back1)
+        addChild(back2)
+        
+        playWithActionMoveBackground(t: back1)
+        playWithActionMoveBackground(t: back2)
+        //
+        
     }
     
     func addBall() {
@@ -120,7 +154,7 @@ class GameScene: SKScene {
         addChild(b)
         
         // hit the ball
-        ballBody.applyImpulse(CGVector(dx: 20, dy: 20))
+        ballBody.applyImpulse(CGVector(dx: 100, dy: 100))
     }
     
     func addCircle() {
@@ -174,6 +208,55 @@ class GameScene: SKScene {
         
         
     }
+    
+    func playWithActionMoveBackground(t: SKSpriteNode) {
+       
+        
+        // beutifull sequence
+        
+        let vector = CGVector(dx: size.width * -1, dy: 0)
+        let opesiteVector = CGVector(dx: size.width, dy: 0)
+        let move = SKAction.move(by: vector, duration: 5)
+        let goBack = SKAction.move(by: opesiteVector, duration: 0)
+        
+        let sequence = SKAction.sequence([move, goBack])
+        let magic = SKAction.repeatForever(sequence)
+        t.run(magic)
+        
+        
+    }
+    
+    func addNinjas() {
+        let numNinjas: CGFloat = 8
+        
+        let ninja = SKSpriteNode(imageNamed: "ninja")
+        let nw = ninja.frame.width
+        let pad = (size.width - numNinjas * nw) * 0.5
+        
+        for i in 0..<Int(numNinjas) {
+            let nin = SKSpriteNode(imageNamed: "ninja")
+            nin.position.x = pad + CGFloat(i) * nw
+            nin.position.y = frame.height - nw
+            addChild(nin)
+            
+        }
+        
+        
+        
+        
+        //
+    }
+    
+    func addPaddle() {
+        let paddle = SKSpriteNode(imageNamed: "block")
+        paddle.position = CGPoint(x: frame.midX, y: 0 + 65)
+        paddle.physicsBody = SKPhysicsBody(rectangleOf: paddle.size)
+        paddle.physicsBody?.allowsRotation = false
+        
+        paddle.name = "paddle" // by giving a node a name we can allaways locate it, without the need to write it in the class level (property)
+        addChild(paddle)
+    }
+    
     
 }
 

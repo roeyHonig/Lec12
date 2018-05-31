@@ -48,11 +48,15 @@ class GameViewController: UIViewController {
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        // so will always be in landscapeLeft
+        return .landscapeLeft
+        /*
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
         } else {
             return .all
         }
+         */
     }
 
     override func didReceiveMemoryWarning() {
