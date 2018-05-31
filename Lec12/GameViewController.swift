@@ -15,31 +15,31 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
-        // including entities and graphs.
-        if let scene = GKScene(fileNamed: "GameScene") {
-            
-            // Get the SKScene from the loaded GKScene
-            if let sceneNode = scene.rootNode as! GameScene? {
-                
-                // Copy gameplay related content over to the scene
-                sceneNode.entities = scene.entities
-                sceneNode.graphs = scene.graphs
-                
-                // Set the scale mode to scale to fit the window
-                sceneNode.scaleMode = .aspectFill
-                
-                // Present the scene
-                if let view = self.view as! SKView? {
-                    view.presentScene(sceneNode)
-                    
-                    view.ignoresSiblingOrder = true
-                    
-                    view.showsFPS = true
-                    view.showsNodeCount = true
-                }
-            }
-        }
+        // we've looked at the story board and seen that the main View in this UIViewController
+        // is of type SKView
+        // so we can do the following:
+        let v = view as! SKView // because i'm sure of it , i could have write self.view
+    
+        // we would like to instinitate a Sceane (which is a screen in the game), a game is very similar to a movie, the game screen is allways moving
+        // So , Init A Scene
+        // our view has a frame and the frame has its size
+        let size = self.view.frame.size // every view has a size, it's its rectengular size
+        let scene = GameScene(size: size)
+       
+        // in games, the screen is always redrewn
+        // we can get the Frames Per second rate to show on screen, but
+        // don't leave it on for the APP Store!!!!!!!!!
+        // for debug pupos only !!!!!!!!!!!!!!!!!!!!!!!!!!!
+        v.showsFPS = true
+        
+        // change the background color
+        scene.backgroundColor = UIColor.orange
+        
+        // Show the Scene
+        v.presentScene(scene)
+        //
+        
+    
     }
 
     override var shouldAutorotate: Bool {
