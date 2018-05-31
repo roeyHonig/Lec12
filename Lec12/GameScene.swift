@@ -10,11 +10,16 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+    var b: SKSpriteNode!
+    
     override func didMove(to view: SKView) {
+        
+        // z-order matters
         addBackground("backT")
         addBackground("frontT")
         addBackground("lights")
         addBackground("midt")
+        addBall()
         /*Setup the game scene here*/
         
         // in games there are nodes, node are everything, like charcters or anything
@@ -66,14 +71,33 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // each time the next frame is presented
+        // this is basically the time counter
+        if b != nil {
+            
+            if b.position.x < frame.width {
+                b.position.x += 1
+            }
+            
+        }
+        
     }
     
     func addBackground(_ fileName: String) {
-        let b = SKSpriteNode(imageNamed: fileName)
-        b.size.width = self.size.width
-        b.size.height = self.size.height
+        let back = SKSpriteNode(imageNamed: fileName)
+        back.size.width = self.size.width
+        back.size.height = self.size.height
+        back.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(back)
+    }
+    
+    func addBall() {
+        b = SKSpriteNode(imageNamed: "ball.png")
+        b.size.width = 30
+        b.size.height = 30
         b.position = CGPoint(x: frame.midX, y: frame.midY)
         addChild(b)
+        
+        
     }
     
     

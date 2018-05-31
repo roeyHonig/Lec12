@@ -18,7 +18,7 @@
 		6DFD9DA120BFEA6300D8AA16 /* midt.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9D9D20BFEA6300D8AA16 /* midt.png */; };
 		6DFD9DA220BFEA6300D8AA16 /* frontT.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9D9E20BFEA6300D8AA16 /* frontT.png */; };
 		6DFD9DA320BFEA6300D8AA16 /* backT.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9D9F20BFEA6300D8AA16 /* backT.png */; };
-		6DFD9DA520BFEB6500D8AA16 /* icons8-pokeball_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9DA420BFEB6500D8AA16 /* icons8-pokeball_2.png */; };
+		6DFD9DA520BFEB6500D8AA16 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DFD9DA420BFEB6500D8AA16 /* ball.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		6DFD9D9D20BFEA6300D8AA16 /* midt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = midt.png; sourceTree = "<group>"; };
 		6DFD9D9E20BFEA6300D8AA16 /* frontT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frontT.png; sourceTree = "<group>"; };
 		6DFD9D9F20BFEA6300D8AA16 /* backT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backT.png; sourceTree = "<group>"; };
-		6DFD9DA420BFEB6500D8AA16 /* icons8-pokeball_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-pokeball_2.png"; sourceTree = "<group>"; };
+		6DFD9DA420BFEB6500D8AA16 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 		6D2FE00B20BFCCC800D4E3E6 /* Lec12 */ = {
 			isa = PBXGroup;
 			children = (
-				6DFD9DA420BFEB6500D8AA16 /* icons8-pokeball_2.png */,
+				6DFD9DA420BFEB6500D8AA16 /* ball.png */,
 				6DFD9D9F20BFEA6300D8AA16 /* backT.png */,
 				6DFD9D9E20BFEA6300D8AA16 /* frontT.png */,
 				6DFD9D9C20BFEA6200D8AA16 /* lights.png */,
@@ -146,7 +146,7 @@
 			files = (
 				6DFD9DA120BFEA6300D8AA16 /* midt.png in Resources */,
 				6DFD9DA020BFEA6300D8AA16 /* lights.png in Resources */,
-				6DFD9DA520BFEB6500D8AA16 /* icons8-pokeball_2.png in Resources */,
+				6DFD9DA520BFEB6500D8AA16 /* ball.png in Resources */,
 				6D2FE01820BFCCC800D4E3E6 /* Main.storyboard in Resources */,
 				6DFD9D9B20BFE91000D8AA16 /* back.psd in Resources */,
 				6DFD9DA320BFEA6300D8AA16 /* backT.png in Resources */,
